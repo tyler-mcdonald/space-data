@@ -1,0 +1,22 @@
+{
+  "name": "space-data",
+  "version": "1.0.0",
+  "description": "Consumes different APIs about space and displays data.",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyler-mcdonald/space-data.git"
+  },
+  "author": "Tyler McDonald",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tyler-mcdonald/space-data/issues"
+  },
+  "homepage": "https://github.com/tyler-mcdonald/space-data#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
+}
