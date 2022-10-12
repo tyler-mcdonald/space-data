@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// deps
+import { useState, useEffect } from "react";
+// components
+import { LaunchInfo } from "./components/LaunchInfo";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [data, setData] = useState(null);
+
+  const fetchData = async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setData(await data);
+  };
+
+  useEffect(() => {
+    fetchData("https://ll.thespacedevs.com/2.2.0/launch/");
+  }, []);
+
+  return <>{data ? <LaunchInfo data={data.results} /> : null}</>;
 }
 
 export default App;
