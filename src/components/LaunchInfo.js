@@ -1,4 +1,4 @@
-export const LaunchInfo = ({ launch }) => {
+export const LaunchInfo = ({ launch, rocket }) => {
   // date
   // rocket (pull from other API)
   // success/failure
@@ -24,8 +24,7 @@ export const LaunchInfo = ({ launch }) => {
       </div>
 
       <div>
-        <p>Rocket</p>
-        <p>#</p>
+        <p>{rocket.name}</p>
       </div>
 
       <div>
