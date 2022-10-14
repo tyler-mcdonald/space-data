@@ -1,18 +1,39 @@
 import { formatDate } from "../utils/formatDate";
 import { formatTime } from "../utils/formatTime";
+const placeholderImage = require("../styles/images/spaceX.png");
 
 export const LaunchInfo = ({ launch, rocket }) => {
-  const { date_utc, success, details, links } = launch;
+  const { name, date_utc, success, details, links } = launch;
   const formattedDate = formatDate(date_utc);
   const formattedTime = formatTime(date_utc);
 
   return (
     <section className="flex">
       <div>
+        <h1>{name}</h1>
+      </div>
+
+      <div>
         <ul>
-          <li>Launch: {formattedDate}</li>
+          <li>{formattedDate}</li>
           <li> {formattedTime}</li>
         </ul>
+      </div>
+
+      <div>
+        {links.patch.small ? (
+          <img src={links.patch.small} alt={name + " patch"} />
+        ) : (
+          <img
+            className="placeholder"
+            src={placeholderImage}
+            alt="rocket launch next to spaceX building"
+          />
+        )}
+      </div>
+
+      <div>
+        <h3>Spacecraft: {rocket.name}</h3>
       </div>
 
       <div>
@@ -20,14 +41,6 @@ export const LaunchInfo = ({ launch, rocket }) => {
           Mission {success ? "Success" : "Failure"}
           {details ? `: ${details}` : ""}
         </p>
-      </div>
-
-      <div>
-        <img src={links.patch.small} alt="mission patch" />
-      </div>
-
-      <div>
-        <p>{rocket.name}</p>
       </div>
 
       <div>

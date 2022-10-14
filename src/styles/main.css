@@ -11,10 +11,15 @@
 }
 
 .flex ul {
+    padding-left: 0;
     list-style: none;
     text-align: center;
 }
 
 .flex li {
     padding-top: .25em;
+}
+
+.placeholder {
+    border-radius: 100%;
 }
