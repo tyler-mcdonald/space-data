@@ -6,21 +6,22 @@ export const LaunchInfo = ({ launch, rocket }) => {
   // mission article
   // mission youtube id
   //
+  const { date_local, success, details, links } = launch;
 
   return (
     <>
       <div>
-        <p>Date: {launch.date_local}</p>
+        <p>Date: {date_local}</p>
       </div>
 
       <div>
         <p>
-          Mission {launch.success ? "Success" : "Failure"}: {launch.details}
+          Mission {success ? "Success" : "Failure"}: {details}
         </p>
       </div>
 
       <div>
-        <img src={launch.links.patch.small} alt="mission patch" />
+        <img src={links.patch.small} alt="mission patch" />
       </div>
 
       <div>
@@ -29,7 +30,7 @@ export const LaunchInfo = ({ launch, rocket }) => {
 
       <div>
         <a
-          href={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`}
+          href={`https://www.youtube.com/watch?v=${links.youtube_id}`}
           target="_blank"
           rel="noreferrer"
         >
@@ -40,7 +41,7 @@ export const LaunchInfo = ({ launch, rocket }) => {
       <br></br>
 
       <div>
-        <a href={launch.links.article} target="_blank" rel="noreferrer">
+        <a href={links.article} target="_blank" rel="noreferrer">
           Read Article
         </a>
       </div>
