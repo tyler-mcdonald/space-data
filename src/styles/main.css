@@ -9,3 +9,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.flex ul {
+    list-style: none;
+    text-align: center;
+}
+
+.flex li {
+    padding-top: .25em;
+}

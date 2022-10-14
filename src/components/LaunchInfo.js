@@ -1,14 +1,18 @@
 import { formatDate } from "../utils/formatDate";
+import { formatTime } from "../utils/formatTime";
 
 export const LaunchInfo = ({ launch, rocket }) => {
   const { date_utc, success, details, links } = launch;
   const formattedDate = formatDate(date_utc);
+  const formattedTime = formatTime(date_utc);
 
   return (
     <section className="flex">
       <div>
-        <p>Launch: {formattedDate}</p>
-        <p></p>
+        <ul>
+          <li>Launch: {formattedDate}</li>
+          <li> {formattedTime}</li>
+        </ul>
       </div>
 
       <div>
