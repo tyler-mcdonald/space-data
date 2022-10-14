@@ -1,7 +1,4 @@
-// deps
 import { useState, useEffect } from "react";
-// modules
-// components
 import { LaunchInfo } from "./components/LaunchInfo";
 
 function App() {

@@ -21,6 +21,7 @@ export const LaunchInfo = ({ launch, rocket }) => {
       </div>
 
       <div>
+        {/* display patch image or placeholder */}
         {links.patch.small ? (
           <img src={links.patch.small} alt={name + " patch"} />
         ) : (
@@ -43,6 +44,7 @@ export const LaunchInfo = ({ launch, rocket }) => {
         </p>
       </div>
 
+      {/* Youtube link */}
       <div>
         <a
           href={`https://www.youtube.com/watch?v=${links.youtube_id}`}
@@ -55,8 +57,8 @@ export const LaunchInfo = ({ launch, rocket }) => {
 
       <br></br>
 
+      {/* Article link */}
       <div>
-        {/* check if article exists */}
         {links.article ? (
           <a href={links.article} target="_blank" rel="noreferrer">
             Read Article
