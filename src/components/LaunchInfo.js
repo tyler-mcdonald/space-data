@@ -1,39 +1,13 @@
+import { formatDate } from "../utils/formatDate";
+
 export const LaunchInfo = ({ launch, rocket }) => {
-  // date
-  // rocket (pull from other API)
-  // success/failure
-  // mission details
-  // mission article
-  // mission youtube id
-  //
   const { date_utc, success, details, links } = launch;
-
-  const formatDate = (date) => {
-    // "2006-03-24T22:30:00.000Z"
-    const year = date.slice(0, 4);
-    const month = date.slice(5, 7);
-    const day = date.slice(8, 10);
-    const time = date.slice(11, 16);
-
-    function toMonthName(monthNumber) {
-      const date = new Date();
-      date.setMonth(monthNumber - 1);
-      return date.toLocaleString("en-US", {
-        month: "long",
-      });
-    }
-
-    const monthName = toMonthName(month);
-
-    // format date
-    const formattedDate = `${monthName} ${day}, ${year}`;
-    return formattedDate;
-  };
+  const formattedDate = formatDate(date_utc);
 
   return (
     <section className="flex">
       <div>
-        <p>Launch: {formatDate(date_utc)}</p>
+        <p>Launch: {formattedDate}</p>
         <p></p>
       </div>
 
