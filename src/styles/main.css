@@ -48,8 +48,10 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
+    width: 35px;
     height: 20px;
+    background-color: #333;
+    border: none;
 }
 
 .toggle-button .bar {
@@ -83,7 +85,7 @@ body {
         text-align: center;
     }
 
-    .navbar-links li a {
+    .navbar-links li button {
         padding: .5rem 1rem;
     }
 

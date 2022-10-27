@@ -1,6 +1,6 @@
 export const ToggleMenu = ({ toggle }) => {
   return (
-    <a
+    <button
       href="#"
       className="toggle-button"
       onClick={() => {
@@ -10,6 +10,6 @@ export const ToggleMenu = ({ toggle }) => {
       <span className="bar"></span>
       <span className="bar"></span>
       <span className="bar"></span>
-    </a>
+    </button>
   );
 };
