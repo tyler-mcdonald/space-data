@@ -8,7 +8,7 @@ export const LaunchInfo = ({ launch, rocket }) => {
   const formattedTime = formatTime(date_utc);
 
   return (
-    <section className="flex">
+    <section className="launch-card">
       <div>
         <h1>{name}</h1>
       </div>
