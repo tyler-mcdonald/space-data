@@ -1,10 +1,21 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { ToggleMenu } from "./ToggleMenu";
+
 export const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+  const classes = isActive ? "navbar-links active" : "navbar-links";
+
+  const handleToggle = () => {
+    isActive ? setIsActive(false) : setIsActive(true);
+  };
+
   return (
     <nav className="navbar">
       <div className="brand-title">SpaceX Launches</div>
-      <div className="navbar-links">
+      <ToggleMenu toggle={handleToggle} />
+      <div className={classes}>
         <ul>
           <li>
             <Link to="/">Home</Link>
