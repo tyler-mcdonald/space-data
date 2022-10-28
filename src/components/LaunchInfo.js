@@ -7,6 +7,12 @@ export const LaunchInfo = ({ launch, rocket }) => {
   const formattedDate = formatDate(date_utc);
   const formattedTime = formatTime(date_utc);
 
+  function missionSuccessStatus() {
+    if (success === null) return "";
+    else if (success) return "Success";
+    else return "Failure";
+  }
+
   return (
     <section className="launch-card">
       <div>
@@ -39,7 +45,7 @@ export const LaunchInfo = ({ launch, rocket }) => {
 
       <div>
         <p>
-          Mission {success ? "Success" : "Failure"}
+          Mission {missionSuccessStatus()}
           {details ? `: ${details}` : ""}
         </p>
       </div>
