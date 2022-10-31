@@ -96,11 +96,13 @@ body {
 
 /* Launches */
 .launch-card {
-    margin: 3em;
+    margin: auto;
+    margin-top: 2em;
     border: black 1px solid;
     max-width: 950px;
     background-color: #0e81df1f;
     border-radius: 30px;
+    text-align: center;
 }
 
 .launch-card div {
