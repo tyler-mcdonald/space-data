@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { LaunchInfo } from "./LaunchInfo";
+import { LaunchCard } from "./LaunchCard";
 
 export const RandomLaunch = () => {
   const [launchData, setLaunchData] = useState(null);
@@ -32,7 +32,7 @@ export const RandomLaunch = () => {
   return (
     <>
       {launchData && rocketData ? (
-        <LaunchInfo launch={randomLaunch} rocket={rocketData} />
+        <LaunchCard launch={randomLaunch} rocket={rocketData} />
       ) : null}
     </>
   );
